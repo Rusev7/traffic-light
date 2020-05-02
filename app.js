@@ -7,20 +7,10 @@ let timerCounter = 24;
 let color = 'red';
 
 setInterval(() => {
-    if(timerCounter >= 0) {
-        if (color == 'red') {
-            redColorLight();
-        } else {
-            greenColorLight();
-        }
-    }
-
-    if(timerCounter < 0) {
-        if(color == 'red') {
-            yellowColorLight('green');
-        } else {
-            yellowColorLight('red');
-        }
+    if (timerCounter >= 0) {
+        (color == 'red')? redColorLight() : greenColorLight();
+    } else {
+        (color == 'red')? yellowColorLight('green') : yellowColorLight('red');
     }
 }, 1000);
 
@@ -34,18 +24,15 @@ function redColorLight() {
 }
 
 function yellowColorLight(toColor) {
-    if(toColor == 'red') {
-        timerCounter = 24;
-    } else {
-        timerCounter = 20;
-    }
+    timerCounter = (toColor == 'red')? 24 : 20;
     color = toColor;
+    // Styling
     redColor.style.display = 'none';
     greenColor.style.display = 'none';
     yellowColor.style.display = 'block';
+    // Timer reset
     timer.style.color = '#e67c12';
     timer.innerHTML = '';
-    
 }
 
 function greenColorLight() {

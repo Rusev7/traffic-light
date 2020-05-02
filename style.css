@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #031d44;
+}
+
+.container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    background-color: #70a288;
+}
+
+/* Traffic light styling */
+.light-container {
+    position: relative;
+}
+
+.red-color {
+    background-color: #e63212;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 30px rgba(230, 50, 18, 1);
+    display: none;
+}
+
+.yellow-color {
+    background-color: #e67c12;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 30px rgba(230, 124, 18, 1);
+    display:  none;
+}
+
+.green-color {
+    background-color: #67e612;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 30px rgba(103, 230, 18 ,1);
+    display: none;
+}
+
+/* Timer styling */
+.timer-container {
+    height: 100px;
+    width: 150px;
+    border: 2px solid #ccc;
+    background-color: #333;
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e63212;
+    font-family: 'Orbitron', sans-serif;
+}

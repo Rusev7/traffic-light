@@ -1,35 +1,27 @@
-const timer = document.querySelector('.timer-container');
-const redColor = document.querySelector('.red-color');
-const yellowColor = document.querySelector('.yellow-color');
-const greenColor = document.querySelector('.green-color');
+const timer = document.getElementById('timer');
+const redColor = document.getElementById('red');
+const yellowColor = document.getElementById('yellow');
+const greenColor = document.getElementById('green');
 
 let timerCounter = 24;
 let color = 'red';
 
 setInterval(() => {
-    // red
-    if(timerCounter >= 0 && color == 'red') {
-        redColorLight();
+    if(timerCounter >= 0) {
+        if (color == 'red') {
+            redColorLight();
+        } else {
+            greenColorLight();
+        }
     }
 
-    if(timerCounter == 0) {
+    if(timerCounter < 0) {
         if(color == 'red') {
             yellowColorLight('green');
         } else {
             yellowColorLight('red');
         }
-        
-        
     }
-
-    if(timerCounter >= 0 && color == 'green') {
-        greenColorLight();
-    }
-    // start timer 24
-    // yellow
-    // green
-    // start timer 20
-    // yellow 
 }, 1000);
 
 
@@ -42,19 +34,18 @@ function redColorLight() {
 }
 
 function yellowColorLight(toColor) {
-    setTimeout(() => {
-        if(toColor == 'red') {
-            timerCounter = 24;
-        } else {
-            timerCounter = 20;
-        }
-        color = toColor;
-        redColor.style.display = 'none';
-        greenColor.style.display = 'none';
-        yellowColor.style.display = 'block';
-        timer.style.color = '#e67c12';
-        timer.innerHTML = '';
-    }, 1000);
+    if(toColor == 'red') {
+        timerCounter = 24;
+    } else {
+        timerCounter = 20;
+    }
+    color = toColor;
+    redColor.style.display = 'none';
+    greenColor.style.display = 'none';
+    yellowColor.style.display = 'block';
+    timer.style.color = '#e67c12';
+    timer.innerHTML = '';
+    
 }
 
 function greenColorLight() {
